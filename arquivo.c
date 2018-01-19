@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-FILE *criaArquivo(char *nome) {
+FILE *criaArquivo(char nome[]) {
     FILE *arquivo = fopen(nome, "w");
     if (arquivo == NULL) {
         printf("ERRO 404 ARQUIVO NAO ENCONTRADO!\n");
@@ -14,7 +14,7 @@ FILE *criaArquivo(char *nome) {
     return arquivo;
 }
 
-FILE *abreArquivo(char url[]) {
+FILE *lerArquivo(char *url) {
     FILE *arquivo = fopen(url, "r");
 
     if (arquivo == NULL) {
@@ -23,8 +23,8 @@ FILE *abreArquivo(char url[]) {
     return arquivo;
 }
 
-void geraAleatorios(char nome[], int tam) {
-    FILE *arquivo = fopen(nome, "w");
+void geraArqAleatorio(char nome[], int tam) {
+    FILE *arquivo = criaArquivo(nome);
 
     if (arquivo == NULL) {
         printf("Erro ao gerar o arquivo %s\n", nome);
@@ -37,7 +37,7 @@ void geraAleatorios(char nome[], int tam) {
     printf("Arquivo %s gerado com sucesso!\n", nome);
 }
 
-void arqOrdenado(char funcOrd[], int vetor[], int tam, char nomeArray[]) {
+void arqVetOrdenado(char funcOrd[], int vetor[], int tam, char nomeArray[]) {
     char nomeAux[25];
     strcpy(nomeAux, funcOrd);
     FILE *pont_arq = criaArquivo(strcat(nomeAux, nomeArray));
@@ -48,7 +48,7 @@ void arqOrdenado(char funcOrd[], int vetor[], int tam, char nomeArray[]) {
 }
 
 void insereVetor(char nome[], int vet[], int tam) {
-    FILE *arquivo = abreArquivo(nome);
+    FILE *arquivo = lerArquivo(nome);
     for (int i = 0; i < tam; i++) {
         fscanf(arquivo, "%d", &vet[i]);
     }

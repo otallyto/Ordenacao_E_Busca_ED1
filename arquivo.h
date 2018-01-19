@@ -9,13 +9,13 @@
 
 #include <stdio.h>
 
-FILE *abreArquivo(char url[]);
+FILE *lerArquivo(char *url);
 
-void geraAleatorios(char nome[], int tam);
+void geraArqAleatorio(char nome[], int tam);
 
 void insereVetor(char nome[], int vet[], int tam);
 
-void arqOrdenado(char funcOrd[], int vetor[], int tam, char nomeArray[]);
+void arqVetOrdenado(char funcOrd[], int vetor[], int tam, char nomeArray[]);
 
 FILE *criaArquivo(char *nome);
 

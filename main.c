@@ -44,10 +44,13 @@ int main() {
                 opcQuickSort();
                 break;
             case 7:
+                opcMergeSort();
                 break;
             case 8:
+                opcBuscaBinaria();
                 break;
             case 9:
+                opcBuscaSequecial();
                 break;
             case 0:
                 flag = 1;
@@ -58,9 +61,6 @@ int main() {
         }
 
     }
-
-
-
 //     for (int i = 0; i < CEM; i++) {
 //       printf("Posicao %d Conteudo %d\n",i+1,vetCem[i] );
 //     }

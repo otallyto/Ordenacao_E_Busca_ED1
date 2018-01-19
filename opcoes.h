@@ -5,6 +5,7 @@
 #ifndef ORDENACAO_BUSCA_OPCOES_H
 #define ORDENACAO_BUSCA_OPCOES_H
 
+void menuBusca();
 
 void opcGeraAleatorios();
 
@@ -17,5 +18,11 @@ void opcSelectionSort();
 void opcRadixSort();
 
 void opcQuickSort();
+
+void opcMergeSort();
+
+void opcBuscaBinaria();
+
+void opcBuscaSequecial();
 
 #endif //ORDENACAO_BUSCA_OPCOES_H
